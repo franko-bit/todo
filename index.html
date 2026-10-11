@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Attention & Discipline</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0d0f0e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Discipline">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="icon-192.png">
+<style>
+:root{--bg:#0d0f0e;--card:#1b1e1c;--card2:#262a27;--tx:#f2f6f3;--mu:#98a39c;--mint:#7ff0d8;--ln:#2e332f;--red:#ff8a7a;--yel:#f1d977;--grn:#7fe08a}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.45 -apple-system,"Inter",system-ui,"Segoe UI",sans-serif;overscroll-behavior:none}
+body{background:radial-gradient(900px 500px at 100% -10%,#12332b 0,transparent 60%),var(--bg);min-height:100vh}
+button,input,textarea,select{font:inherit;color:inherit}button{cursor:pointer;border:0;background:none}
+main{max-width:520px;margin:0 auto;padding:calc(env(safe-area-inset-top) + 16px) 16px calc(130px + env(safe-area-inset-bottom));animation:in .25s}@keyframes in{from{opacity:0;transform:translateY(6px)}}
+h1{font-size:30px;line-height:1.1;letter-spacing:-.03em;margin:0}h2{font-size:21px;letter-spacing:-.02em;margin:22px 0 12px;display:flex;justify-content:space-between;align-items:baseline}h2 a{font-size:13px;color:var(--mu);font-weight:500}
+.hero{background:linear-gradient(160deg,#c6fbef,#74e6cf);color:#0e211b;border-radius:34px;padding:22px 22px 24px;position:relative}.hero small{opacity:.7;font-size:14px}.hero h1{margin:6px 0 4px;font-size:32px}.hero p{margin:0;opacity:.75;font-size:13px;max-width:78%}
+.hero .go{position:absolute;right:16px;bottom:16px;width:54px;height:40px;border-radius:20px;background:#101312;color:var(--mint);display:grid;place-items:center;font-size:20px}
+.pills{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}.pillb{background:var(--card2);border-radius:40px;padding:16px 6px 12px;display:grid;justify-items:center;gap:8px;font-size:12px;font-weight:600}.pillb i{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:24px;color:#10201b}
+.tc{border-radius:30px 30px 34px 34px;padding:16px 18px;margin-bottom:12px;color:#17201a;position:relative}.c0{background:linear-gradient(135deg,#fbf0c6,#e6d598)}.c1{background:linear-gradient(135deg,#d6f6b7,#84d58a)}.c2{background:linear-gradient(135deg,#f9d3ca,#eaa597)}.c3{background:linear-gradient(135deg,#c9f7ec,#7fe0cb)}
+.tag{display:inline-block;border:1px solid #17201a66;border-radius:99px;padding:2px 10px;font-size:11px;font-weight:600}.tc h3{margin:8px 0 2px;font-size:18px;letter-spacing:-.02em;padding-right:50px}.tc p{margin:0;font-size:12px;opacity:.7}.tc .bar{height:6px;border-radius:9px;background:#00000022;margin-top:12px;width:62%;overflow:hidden}.tc .bar i{display:block;height:100%;background:#0b7a2f;border-radius:9px}
+.tc .chk{position:absolute;right:14px;top:14px;width:38px;height:38px;border-radius:50%;background:#101312;color:#fff;display:grid;place-items:center;font-size:18px}.tm{margin-top:9px;font-weight:700;font-size:13px;font-variant-numeric:tabular-nums;display:flex;gap:14px;flex-wrap:wrap}.tm span{background:#0000001a;border-radius:99px;padding:3px 10px}.tc.done{opacity:.55}.tc.done h3{text-decoration:line-through}.tc .x{position:absolute;right:16px;bottom:14px;font-size:12px;opacity:.6;text-decoration:underline}
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}.round{width:42px;height:42px;border-radius:50%;border:1px solid var(--ln);display:grid;place-items:center;font-size:18px}
+.week{display:flex;gap:6px;justify-content:space-between;margin:10px 0 14px}.wd{flex:1;text-align:center;padding:10px 0;border-radius:24px;font-size:11px;color:var(--mu)}.wd b{display:block;font-size:15px;color:var(--tx);margin-top:2px}.wd.on{background:var(--mint);color:#0d2a22}.wd.on b{color:#0d2a22}
+.card{background:var(--card);border-radius:26px;padding:16px;margin-bottom:12px}.row{display:flex;align-items:center;gap:12px}.grow{flex:1;min-width:0}.mu{color:var(--mu);font-size:12px}
+.hab{display:flex;gap:12px;align-items:center;background:var(--card);border-radius:24px;padding:14px;margin-bottom:10px}.hab .ck{width:34px;height:34px;border-radius:50%;border:2px solid var(--ln);display:grid;place-items:center;flex-shrink:0;color:transparent;font-weight:900}.hab.on .ck{background:var(--mint);border-color:var(--mint);color:#0d2a22}.hab b{display:block}.dots{display:flex;gap:4px;margin-top:6px}.dots i{width:14px;height:14px;border-radius:5px;background:var(--card2)}.dots i.y{background:var(--mint)}
+.btn{display:block;width:100%;padding:16px;border-radius:99px;background:linear-gradient(180deg,#b9fbea,#6fe5cc);color:#08241c;font-weight:800;font-size:16px;text-align:center}.btn.g{background:var(--card2);color:var(--tx);font-weight:600}.btn.sm{display:inline-block;width:auto;padding:10px 16px;font-size:13px}
+.in{width:100%;background:transparent;border:1.5px solid #4a514c;border-radius:16px;padding:14px;margin-top:6px;outline:0}.in:focus{border-color:var(--mint)}label.l{font-size:12px;color:var(--mu);display:block;margin-top:14px;font-weight:600}.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pr{display:flex;gap:8px;margin-top:8px}.pr button{flex:1;padding:11px;border-radius:99px;border:1.5px solid;font-weight:600}.pr .high{border-color:var(--red);color:var(--red)}.pr .med{border-color:var(--yel);color:var(--yel)}.pr .low{border-color:var(--grn);color:var(--grn)}.pr .sel.high{background:#ff8a7a30}.pr .sel.med{background:#f1d97730}.pr .sel.low{background:#7fe08a30}
+.tg{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--ln)}.tg small{display:block;color:var(--mu);font-size:11px}.sw{width:52px;height:30px;border-radius:99px;background:var(--card2);position:relative;flex-shrink:0;transition:.2s}.sw:after{content:"";position:absolute;top:4px;left:4px;width:22px;height:22px;border-radius:50%;background:#fff;transition:.2s}.sw.on{background:var(--mint)}.sw.on:after{left:26px;background:#0d2a22}
+nav{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(14px + env(safe-area-inset-bottom));width:min(92vw,420px);height:72px;border-radius:40px;background:#262a27cc;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid #ffffff14;display:flex;align-items:center;justify-content:space-around;z-index:20}
+nav button{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;color:#8c9790;font-size:10px}nav button.on{color:var(--mint);background:#ffffff12}nav svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}nav .fab{width:60px;height:60px;background:#fff;color:#0d0f0e;font-size:32px;font-weight:300;box-shadow:0 6px 20px #0006}
+.ringw{position:relative;width:250px;height:250px;margin:14px auto}.ringw svg{transform:rotate(-90deg)}.ringw div{position:absolute;inset:0;display:grid;place-content:center;text-align:center}.clock{font-size:54px;font-weight:800;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:12px 0}.chip{padding:9px 16px;border-radius:99px;background:var(--card2);font-weight:600;font-size:13px}.chip.on{background:var(--mint);color:#0d2a22}
+.bars{display:flex;gap:8px;align-items:flex-end;height:110px}.bars div{flex:1;text-align:center;font-size:10px;color:var(--mu);display:flex;flex-direction:column;justify-content:flex-end;height:100%}.bars i{display:block;background:var(--mint);border-radius:8px 8px 4px 4px;min-height:4px;margin-bottom:4px}
+.stat{background:var(--card);border-radius:24px;padding:14px}.stat b{font-size:26px;letter-spacing:-.03em;display:block}.g3{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+#sheet{position:fixed;inset:0;background:var(--bg);z-index:40;overflow:auto;display:none;padding:calc(env(safe-area-inset-top) + 16px) 16px calc(30px + env(safe-area-inset-bottom))}#sheet.on{display:block;animation:in .2s}#sheet .w{max-width:520px;margin:auto}
+#alarm{position:fixed;inset:0;z-index:99;display:none;place-items:center;text-align:center;padding:24px;background:linear-gradient(160deg,#9bf5e0,#35c5a6);color:#08241c}#alarm.on{display:grid}#alarm .bell{font-size:70px;animation:rg .5s infinite alternate}@keyframes rg{from{transform:rotate(-14deg)}to{transform:rotate(14deg)}}#alarm h1{margin:6px 0}#alarm p{margin:0 0 22px;font-size:17px}#alarm .btn{background:#08241c;color:var(--mint);margin-bottom:10px}
+.breath{width:130px;height:130px;margin:18px auto;border-radius:50%;background:radial-gradient(#b9fbea,#4fd9bd);animation:br 8s infinite ease-in-out}@keyframes br{50%{transform:scale(1.35)}}
+#block{position:fixed;inset:0;z-index:98;display:none;place-items:center;text-align:center;padding:24px;background:radial-gradient(circle at 50% 15%,#4a1a16,#0d0f0e 70%)}#block.on{display:grid;animation:in .2s}#block h1{font-size:46px;color:var(--red);margin:6px 0}#block p{color:var(--mu);margin:0}#block .no{font-size:64px}.btn:disabled{opacity:.4}.two .btn{width:100%;text-align:center}a.btn{text-decoration:none}#toast{position:fixed;left:50%;bottom:110px;transform:translateX(-50%);background:#fff;color:#0d0f0e;padding:10px 18px;border-radius:99px;font-weight:700;font-size:13px;opacity:0;pointer-events:none;transition:.25s;z-index:60}#toast.on{opacity:1}
+</style>
+</head>
+<body>
+<main id="view"></main>
+<nav id="nav"></nav>
+<div id="sheet"></div>
+<div id="block"><div><div class="no">🚫</div><h1 id="bM"></h1><p>You promised to protect your attention.</p><div class="breath"></div><button class="btn" data-a="bback">Back to what matters</button><button class="btn g" id="bgo" data-a="bany" style="margin-top:10px" disabled>Continue anyway</button></div></div>
+<div id="alarm"><div><div class="bell">⏰</div><h1 id="aT"></h1><p id="aB"></p><button class="btn" data-a="stop">Stop alarm</button><button class="btn" style="background:#ffffff55;color:#08241c" data-a="snooze">Snooze 5 min</button></div></div>
+<div id="toast"></div>
+<script>
+const $=s=>document.querySelector(s),pad=n=>String(n).padStart(2,'0'),K='ap2';
+const ymd=(d=new Date())=>d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
+const addD=(d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x};
+const uid=()=>Math.random().toString(36).slice(2,9);
+const esc=s=>String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const t12=t=>{const[h,m]=t.split(':').map(Number);return (h%12||12)+':'+pad(m)+' '+(h<12?'AM':'PM')};
+const mins=t=>{const[h,m]=t.split(':').map(Number);return h*60+m};
+const HAB=[['spirit','Spiritual practice, no screens','Prayer, reflection, reading','🙏'],['post','Posted and left the feed','Business task only, then exit','📵'],['focus','Deep focus session','One task, no feed','🎯'],['write','Wrote in my own words','Before using AI or tools','✍️'],['speak','Practised speaking aloud','Record, note one improvement','🎤'],['move','Moved my body','Sports, strength, walking','💪'],['phone','Phone away at meals & bed','Space without constant input','🍽️'],['plan','Planned tomorrow, slept on time','Three priorities; asleep by 9 PM','🌙']];
+const SEED=[['05:00','06:00','Spiritual foundation','Prayer or meditation, spiritual reading, journaling, priorities.','high'],['06:00','09:00','Business & Playmates','High-value work, follow-ups, publish content then exit.','high'],['09:00','12:00','Study, read, outreach','One task at a time. Explain it in your own words.','med'],['12:00','13:00','Lunch & mental rest','Eat, walk, stretch. Phone away.','low'],['13:00','15:00','Deep thinking & writing','Proposals, assignments, ideas. Phone silent.','high'],['15:00','16:00','Speaking & confidence','Read aloud, speak without notes, record, review once.','med'],['16:00','17:00','Business admin','Email, customer feedback, records, next actions.','med'],['17:00','18:00','Sports & training','Warm up, exercise, cool down. Phone away.','low'],['18:00','21:00','Dinner & wind-down','People you care about, reflection, prepare tomorrow. Sleep by 9 PM.','med']];
+function load(){try{const x=JSON.parse(localStorage.getItem(K));if(x)return x}catch(e){}return{name:'Frank',tasks:SEED.map(s=>({id:uid(),start:s[0],end:s[1],name:s[2],desc:s[3],pri:s[4],repeat:true,alarm:true,done:{}})),hab:{},focus:{},urges:[],refl:{},set:{sound:true,notify:true,alerts:true},fired:{}}}
+let D=load();D.away=D.away||{};D.blocks=D.blocks||[];D.msg=D.msg||"Don't do that.";const save=()=>{try{localStorage.setItem(K,JSON.stringify(D))}catch(e){}};
+let tab='home',sel=ymd(),F={pri:'med',repeat:true,alarm:true},ring_={total:25*60,left:25*60,end:0,run:false},deferred=null;
+const today=()=>ymd(),tasksOn=d=>D.tasks.filter(t=>t.repeat||t.date===d).sort((a,b)=>a.start.localeCompare(b.start));
+const isDone=(t,d)=>!!(t.done&&t.done[d]),habOn=(id,d=today())=>(D.hab[d]||[]).includes(id);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),1800)}
+function streakOf(fn){let s=0;for(let i=0;i<400;i++){const d=ymd(addD(new Date(),-i));if(fn(d))s++;else if(i>0)break}return s}
+const overall=()=>streakOf(d=>(D.hab[d]||[]).length>=5);
+
+/* ---------- views ---------- */
+const IC={home:'<path d="M3 11l9-8 9 8v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/>',plan:'<rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/>',habits:'<circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/>',focus:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'};
+function nav(){const b=(k,l)=>`<button data-a="go" data-t="${k}" class="${tab===k?'on':''}" aria-label="${l}"><svg viewBox="0 0 24 24">${IC[k]}</svg></button>`;$('#nav').innerHTML=b('home','Home')+b('plan','Plan')+'<button class="fab" data-a="add" aria-label="Add task">+</button>'+b('habits','Habits')+b('focus','Focus')}
+function card(t,i,d){const done=isDone(t,d),n=new Date(),nm=n.getHours()*60+n.getMinutes(),s=mins(t.start),e=mins(t.end);const pct=done?100:(d===today()&&nm>=s?Math.min(100,Math.round((nm-s)/(e-s)*100)):0);return `<div class="tc c${i%4} ${done?'done':''}"><span class="tag">${{high:'High',med:'Medium',low:'Low'}[t.pri]}${t.alarm?' · ⏰':''}</span><button class="chk" data-a="tog" data-id="${t.id}" data-d="${d}">${done?'✓':'↗'}</button><h3>${esc(t.name)}</h3><p>${t12(t.start)} – ${t12(t.end)} · ${esc(t.desc)}</p><div class="bar"><i style="width:${pct}%"></i></div><div class="tm" data-s="${t.start}" data-e="${t.end}" data-d="${d}" data-x="${done?1:0}"></div></div>`}
+function home(){const d=today(),ts=tasksOn(d),dn=ts.filter(t=>isDone(t,d)).length,hn=(D.hab[d]||[]).length,n=new Date(),nm=n.getHours()*60+n.getMinutes();const cur=ts.filter(t=>!isDone(t,d)&&mins(t.end)>nm).slice(0,3);const g=n.getHours()<12?'Good morning':n.getHours()<18?'Good afternoon':'Good evening';
+return `<div class="hero"><small>${g}, ${esc(D.name)} 👋</small><h1>${dn} of ${ts.length} tasks done today</h1><p>${hn}/8 habits · ${overall()}-day streak. Protect your attention.</p><button class="go" data-a="go" data-t="progress">↗</button></div>
+<div class="pills"><button class="pillb" data-a="go" data-t="focus"><i style="background:#fbf0c6">🎯</i>Focus</button><button class="pillb" data-a="urge"><i style="background:#c9f7ec">✋</i>I want to scroll</button><button class="pillb" data-a="go" data-t="progress"><i style="background:#f9d3ca">📈</i>Progress</button></div>
+<h2>Up next <a data-a="go" data-t="plan">See all</a></h2>${cur.length?cur.map((t,i)=>card(t,i,d)).join(''):'<div class="card mu">Nothing left today. Reflect and rest. 🌙</div>'}
+<h2>Habits today <a data-a="go" data-t="habits">Open</a></h2><div class="card"><div class="row"><div class="grow"><b>${hn} / 8 kept</b><div class="mu">Small promises, kept daily</div></div><div style="font-size:26px;font-weight:800">${Math.round(hn/8*100)}%</div></div></div>`}
+function plan(){let w='';for(let i=-3;i<=3;i++){const x=addD(new Date(sel+'T12:00'),i),k=ymd(x);w+=`<button class="wd ${k===sel?'on':''}" data-a="day" data-d="${k}">${x.toLocaleDateString(undefined,{weekday:'short'})}<b>${pad(x.getDate())}</b></button>`}
+const ts=tasksOn(sel),sd=new Date(sel+'T12:00');return `<div class="top"><h1>${sd.toLocaleDateString(undefined,{month:'long',day:'2-digit'})}</h1><button class="round" data-a="ics" aria-label="Export">⏰</button></div><div class="week">${w}</div>${ts.map((t,i)=>card(t,i,sel)+`<div style="text-align:right;margin:-6px 8px 10px"><button class="mu" data-a="del" data-id="${t.id}">Delete task</button></div>`).join('')||'<div class="card mu">No tasks. Tap + to add one.</div>'}<p class="mu" style="text-align:center">⏰ Export puts alarms in your phone calendar so they ring even when other apps are open.</p>`}
+function habits(){const d=today();return `<div class="top"><h1>Habits</h1><span class="mu">${(D.hab[d]||[]).length}/8 today</span></div>${HAB.map(h=>{const on=habOn(h[0]),st=streakOf(x=>habOn(h[0],x));let dots='';for(let i=6;i>=0;i--)dots+=`<i class="${habOn(h[0],ymd(addD(new Date(),-i)))?'y':''}"></i>`;return `<button class="hab ${on?'on':''}" data-a="hab" data-id="${h[0]}" style="width:100%;text-align:left"><span class="ck">✓</span><span class="grow"><b>${h[3]} ${h[1]}</b><span class="mu">${h[2]}</span><span class="dots">${dots}</span></span><span class="mu">🔥${st}</span></button>`}).join('')}`}
+function focus(){const f=D.focus[today()]||{n:0,m:0};return `<div class="top"><h1>Focus</h1><span class="mu">${f.n} sessions · ${f.m} min today</span></div><div class="ringw"><svg width="250" height="250"><circle cx="125" cy="125" r="112" fill="none" stroke="#262a27" stroke-width="12"/><circle id="rg" cx="125" cy="125" r="112" fill="none" stroke="#7ff0d8" stroke-width="12" stroke-linecap="round" stroke-dasharray="703.7" stroke-dashoffset="0"/></svg><div><div class="clock" id="clk">25:00</div><div class="mu" id="fs">One task. One window.</div></div></div>
+<input class="in" id="ftask" placeholder="What will you focus on?" value="${esc(D.ftask||'')}" data-in="ftask"><div class="chips">${[5,15,25,45,60].map(m=>`<button class="chip ${ring_.total===m*60?'on':''}" data-a="fset" data-m="${m}">${m}m</button>`).join('')}</div>
+<div class="two"><button class="btn" data-a="fstart">${ring_.run?'Running…':'Start'}</button><button class="btn g" data-a="fpause">Pause</button></div><button class="btn g" style="margin-top:10px" data-a="freset">Reset</button><button class="btn g" style="margin-top:10px" data-a="urge">I feel the urge to scroll</button><p class="mu" style="text-align:center">Alarm rings with sound, vibration and a notification when time is up.</p>`}
+function progress(){const d=today();let bars='',wk=0,fm=0;for(let i=6;i>=0;i--){const k=ymd(addD(new Date(),-i)),n=(D.hab[k]||[]).length;wk+=n;fm+=(D.focus[k]||{}).m||0;bars+=`<div><i style="height:${n/8*100}%"></i>${addD(new Date(),-i).toLocaleDateString(undefined,{weekday:'narrow'})}</div>`}
+const u=D.urges.filter(x=>x.d>=ymd(addD(new Date(),-6))),p=u.filter(x=>x.k==='pause').length,r=D.refl[d]||{},S=D.set;
+const tg=(k,t,s)=>`<div class="tg"><div>${t}<small>${s}</small></div><button class="sw ${S[k]?'on':''}" data-a="set" data-k="${k}" aria-label="${t}"></button></div>`;
+const last7=()=>[0,1,2,3,4,5,6].map(i=>ymd(addD(new Date(),-i)));const standalone=matchMedia('(display-mode: standalone)').matches||navigator.standalone;
+return `<div class="top"><button class="round" data-a="go" data-t="home">←</button><h1>Progress</h1><span style="width:42px"></span></div><div class="g3"><div class="stat"><b>${overall()} d</b><span class="mu">Streak (5+ habits)</span></div><div class="stat"><b>${Math.round(wk/56*100)}%</b><span class="mu">Habits this week</span></div><div class="stat"><b>${fm}m</b><span class="mu">Focus this week</span></div><div class="stat"><b>${p}/${u.length}</b><span class="mu">Urges paused</span></div></div><div class="g3"><div class="stat"><b>${D.blocks.filter(b=>last7().includes(b.d)).length}</b><span class="mu">Social opens stopped (7d)</span></div><div class="stat"><b>${Math.round(last7().reduce((a,k)=>a+((D.away[k]||{}).s||0),0)/60)}m</b><span class="mu">Left during focus (7d)</span></div></div>
+<div class="card"><b>Habits, last 7 days</b><div class="bars" style="margin-top:12px">${bars}</div></div>
+<h2>Evening reflection</h2><div class="card"><label class="l" style="margin:0">What did I learn today?</label><textarea class="in" rows="2" data-in="learn">${esc(r.learn)}</textarea><label class="l">What went well?</label><textarea class="in" rows="2" data-in="win">${esc(r.win)}</textarea><label class="l">Tomorrow's three priorities</label><textarea class="in" rows="3" data-in="tom">${esc(r.tom)}</textarea></div>
+<h2>Alerts & app</h2><div class="card">${tg('sound','Alarm sound','Loud repeating tone')}${tg('notify','Notifications','Shows over other apps while the app is running')}${tg('alerts','Task reminders','Alert when each task starts')}<label class="l">Your name</label><input class="in" data-in="name" value="${esc(D.name)}"><div class="two" style="margin-top:14px"><button class="btn g sm" data-a="test">Test alarm</button><button class="btn g sm" data-a="ics">Calendar alarms</button></div></div>
+<h2>Block social media</h2><div class="card"><p class="mu" style="margin:0 0 4px">A web app cannot see which apps you open, but your phone can. Set an automation that opens the link below whenever you launch a social app, and this screen appears instead.</p><label class="l">Message shown</label><input class="in" data-in="msg" value="${esc(D.msg)}"><label class="l">Your link (paste into the automation)</label><input class="in" readonly value="${esc(appLink()+'?go=stop')}"><div class="two" style="margin-top:12px"><button class="btn g sm" data-a="copy">Copy link</button><button class="btn g sm" data-a="preview">Preview</button></div><p style="margin:16px 0 4px"><b>iPhone</b></p><p class="mu" style="margin:0">Shortcuts → Automation → + → App → choose Instagram, TikTok… → Is Opened → Run Immediately → Open URLs → paste link.</p><p style="margin:14px 0 4px"><b>Android</b></p><p class="mu" style="margin:0">MacroDroid or Tasker: Trigger "Application Launched" → pick apps → Action "Open URL" → paste link.</p></div>
+<h2>Get the app</h2><div class="card"><div class="row"><img src="icon-192.png" width="72" height="72" alt="App icon" style="border-radius:18px"><div class="grow"><b>Attention &amp; Discipline</b><div class="mu">${standalone?'✓ Installed on this device':'Install to your home screen'}</div></div></div><div class="two" style="margin-top:14px"><button class="btn sm" data-a="install">Install app</button><a class="btn g sm" href="icon-512.png" download="discipline-icon.png">Download icon</a></div><div class="two" style="margin-top:10px"><a class="btn g sm" href="index.html" download="discipline-app.html">Download app file</a><button class="btn g sm" data-a="copyapp">Copy / share link</button></div><p class="mu">iPhone: Share → Add to Home Screen. Android: menu → Install app.</p></div>`}
+function render(){nav();$('#view').innerHTML=({home,plan,habits,focus,progress})[tab]();if(tab==='focus')tickUI();tickCards();scrollTo(0,0)}
+function sheet(h){const s=$('#sheet');if(!h){s.classList.remove('on');return}s.innerHTML='<div class="w">'+h+'</div>';s.classList.add('on');s.scrollTop=0}
+function addSheet(){F={pri:'med',repeat:true,alarm:true};const sd=new Date(sel+'T12:00');sheet(`<div class="top"><button class="round" data-a="close">←</button><h1 style="font-size:24px">Create New Task</h1><span style="width:42px"></span></div><h2 style="margin-top:6px">${sd.toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric'})}</h2><label class="l">Name</label><input class="in" id="fn" placeholder="e.g. Read one chapter"><label class="l">Description</label><textarea class="in" id="fd" rows="3"></textarea><div class="two"><div><label class="l">Start time</label><input class="in" id="fs1" type="time" value="${pad(new Date().getHours()+1)}:00"></div><div><label class="l">End time</label><input class="in" id="fe1" type="time" value="${pad(new Date().getHours()+2)}:00"></div></div><label class="l">Priority</label><div class="pr" id="pri">${['high','med','low'].map(p=>`<button class="${p} ${p==='med'?'sel':''}" data-a="pri" data-p="${p}">${{high:'High',med:'Medium',low:'Low'}[p]}</button>`).join('')}</div><div class="tg" style="margin-top:14px"><div>Repeat every day</div><button class="sw on" data-a="fl" data-k="repeat"></button></div><div class="tg"><div>Alarm at start time</div><button class="sw on" data-a="fl" data-k="alarm"></button></div><button class="btn" style="margin-top:22px" data-a="save">Add Task</button>`)}
+function urgeSheet(){sheet(`<div class="top"><button class="round" data-a="close">←</button><h1 style="font-size:24px">Pause first</h1><span style="width:42px"></span></div><div class="card" style="text-align:center"><p style="font-size:17px;font-weight:700;margin:0">"I feel the urge to scroll, but I don't have to act on it."</p><div class="breath"></div><p class="mu">Take five slow breaths. Ask: do I need rest, connection, information, or am I avoiding something?</p></div><label class="l">What triggered it?</label><select class="in" id="trg" style="background:var(--card)">${['Boredom','Stress or uncertainty','Habit / automatic checking','Wanting approval or analytics','Loneliness','Business action','Other'].map(o=>`<option>${o}</option>`).join('')}</select><div class="two" style="margin-top:18px"><button class="btn" data-a="u1">I paused ✓</button><button class="btn g" data-a="u2">I scrolled</button></div><p class="mu" style="text-align:center">A slip is a cue to restart, not a reason to give up.</p>`)}
+
+/* ---------- actions ---------- */
+document.addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(!b)return;const d=b.dataset,a=d.a;
+if(a==='go'){tab=d.t;sheet();render()}
+else if(a==='add')addSheet();else if(a==='close')sheet();
+else if(a==='tog'){const t=D.tasks.find(x=>x.id===d.id);t.done=t.done||{};t.done[d.d]=!t.done[d.d];save();render()}
+else if(a==='del'){if(confirm('Delete this task?')){D.tasks=D.tasks.filter(x=>x.id!==d.id);save();render()}}
+else if(a==='hab'){const k=today(),l=D.hab[k]||[];D.hab[k]=l.includes(d.id)?l.filter(x=>x!==d.id):[...l,d.id];save();render()}
+else if(a==='day'){sel=d.d;render()}
+else if(a==='pri'){F.pri=d.p;document.querySelectorAll('#pri button').forEach(x=>x.classList.toggle('sel',x===b))}
+else if(a==='fl'){F[d.k]=!F[d.k];b.classList.toggle('on',F[d.k])}
+else if(a==='save'){const n=$('#fn').value.trim();if(!n)return toast('Add a name');const s=$('#fs1').value,en=$('#fe1').value;if(!s||!en)return toast('Set start and end');D.tasks.push({id:uid(),name:n,desc:$('#fd').value.trim(),start:s,end:en,pri:F.pri,repeat:F.repeat,alarm:F.alarm,date:sel,done:{}});save();sheet();tab='plan';render();toast('Task added');askPerm()}
+else if(a==='urge')urgeSheet();
+else if(a==='u1'||a==='u2'){D.urges.push({d:today(),k:a==='u1'?'pause':'restart',t:$('#trg').value,at:Date.now()});save();sheet();toast(a==='u1'?'Well done. Choose your next task.':'Reset kindly. Start again.')}
+else if(a==='fset'){fSet(+d.m);render()}else if(a==='fstart')fStart();else if(a==='fpause')fPause();else if(a==='freset'){fSet(ring_.total/60);render()}
+else if(a==='set'){D.set[d.k]=!D.set[d.k];save();if(d.k==='notify'&&D.set.notify)askPerm();if(d.k==='sound')audio();render()}
+else if(a==='test'){audio();askPerm();ring('Test alarm','Sound, vibration and notification check.')}
+else if(a==='stop')stopAlarm();else if(a==='snooze'){stopAlarm();fSet(5);fStart();tab='focus';render()}
+else if(a==='ics')ics();
+else if(a==='copy')copyT(appLink()+'?go=stop','Link copied');
+else if(a==='copyapp'){if(navigator.share)navigator.share({title:'Attention & Discipline',url:appLink()}).catch(()=>{});else copyT(appLink(),'App link copied')}
+else if(a==='preview')showBlock(true);
+else if(a==='bback'){hideBlock();D.urges.push({d:today(),k:'pause',t:'Opened a social app',at:Date.now()});save();tab=R.run?'focus':'home';render();toast('Good choice.')}
+else if(a==='bany'){hideBlock();D.urges.push({d:today(),k:'restart',t:'Opened a social app',at:Date.now()});save()}
+else if(a==='install'){if(deferred){deferred.prompt();deferred=null}else toast('Use browser menu → Install / Add to Home Screen')}});
+document.addEventListener('input',e=>{const k=e.target.dataset.in;if(!k)return;const v=e.target.value;if(k==='name')D.name=v;else if(k==='msg')D.msg=v;else if(k==='ftask')D.ftask=v;else{const d=today();D.refl[d]=D.refl[d]||{};D.refl[d][k]=v}save()});
+
+/* ---------- alarm engine ---------- */
+let actx,aInt,tInt,ringing=false;
+function audio(){try{actx=actx||new(window.AudioContext||window.webkitAudioContext)();actx.resume()}catch(e){}}
+function beep(f,t,d){if(!actx)return;const o=actx.createOscillator(),g=actx.createGain();o.type='square';o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.3,t+.01);g.gain.setValueAtTime(.3,t+d-.03);g.gain.linearRampToValueAtTime(0,t+d);o.connect(g).connect(actx.destination);o.start(t);o.stop(t+d)}
+function pat(){if(!actx)return;audio();const t=actx.currentTime+.02;[0,.28,.56].forEach((o,i)=>beep(i%2?1175:880,t+o,.2));navigator.vibrate&&navigator.vibrate([300,120,300,120,300])}
+async function askPerm(){if(D.set.notify&&'Notification' in window&&Notification.permission==='default'){try{await Notification.requestPermission()}catch(e){}}}
+async function note(title,body,tag){if(!D.set.notify||!('Notification' in window)||Notification.permission!=='granted')return;const o={body,tag,renotify:true,requireInteraction:true,icon:'icon-192.png',badge:'icon-192.png',vibrate:[300,120,300]};try{const r=await navigator.serviceWorker.ready;await r.showNotification(title,o)}catch(e){try{new Notification(title,o)}catch(_){}}}
+function ring(title,body){ringing=true;$('#aT').textContent=title;$('#aB').textContent=body||'';$('#alarm').classList.add('on');note(title,body,'ap-alarm');if(D.set.sound){pat();clearInterval(aInt);let n=0;aInt=setInterval(()=>{if(++n>120)stopAlarm();else pat()},1500)}const b=document.title;let f=0;clearInterval(tInt);tInt=setInterval(()=>{document.title=f++%2?b:'⏰ '+title},800)}
+function stopAlarm(){ringing=false;$('#alarm').classList.remove('on');clearInterval(aInt);clearInterval(tInt);document.title='Attention & Discipline';navigator.vibrate&&navigator.vibrate(0)}
+function chime(){if(!D.set.sound)return;audio();if(actx){const t=actx.currentTime+.02;beep(660,t,.18);beep(990,t+.22,.3)}}
+
+/* ---------- focus timer (timestamp + worker) ---------- */
+let wk=null,wl=null;const R=ring_;
+const fmt=s=>pad(Math.floor(s/60))+':'+pad(s%60);
+function tickUI(){const c=$('#clk');if(!c)return;c.textContent=fmt(R.left);$('#rg').style.strokeDashoffset=703.7*(1-R.left/R.total);$('#fs').textContent=R.run?(D.ftask?'Focusing: '+D.ftask:'Stay with it'):R.left===0?'Complete':'Ready'}
+function tk(){R.left=Math.max(0,Math.ceil((R.end-Date.now())/1000));tickUI();if(R.run)document.title=fmt(R.left)+' · Focus';if(R.left<=0)fDone()}
+function fStart(){if(R.run)return;if(R.left<=0)R.left=R.total;audio();askPerm();R.end=Date.now()+R.left*1000;R.run=true;D.timer={end:R.end,total:R.total};save();try{const u=URL.createObjectURL(new Blob(['setInterval(()=>postMessage(1),1000)']));wk=new Worker(u);wk.onmessage=tk}catch(e){wk={t:setInterval(tk,1000)}}try{navigator.wakeLock&&navigator.wakeLock.request('screen').then(l=>wl=l)}catch(e){}if(tab==='focus')render()}
+function fStop(){R.run=false;if(wk){wk.terminate?wk.terminate():clearInterval(wk.t);wk=null}try{wl&&wl.release()}catch(e){}D.timer=null;save();document.title='Attention & Discipline'}
+function fPause(){if(!R.run)return;tk();fStop();render()}
+function fSet(m){fStop();R.total=m*60;R.left=R.total}
+function fDone(){fStop();R.left=0;const k=today(),f=D.focus[k]||{n:0,m:0};f.n++;f.m+=Math.round(R.total/60);D.focus[k]=f;if(R.total>=20*60&&!habOn('focus')){D.hab[k]=[...(D.hab[k]||[]),'focus']}save();ring('Focus session complete',(D.ftask?D.ftask+' — ':'')+'Stand up, stretch, rest your eyes.');if(tab==='focus')render()}
+document.addEventListener('visibilitychange',()=>{if(!document.hidden){if(R.run)tk();checkTasks();if(tab==='home'||tab==='plan')render()}});
+if(D.timer&&D.timer.end>Date.now()){const e=D.timer.end;R.total=D.timer.total;R.left=Math.ceil((e-Date.now())/1000);fStart();R.end=e;tk()}else if(D.timer){D.timer=null;save()}
+
+
+/* ---------- live card timers (count up elapsed, count down remaining) ---------- */
+const hms=s=>{s=Math.max(0,s);return pad(Math.floor(s/3600))+':'+pad(Math.floor(s%3600/60))+':'+pad(s%60)};
+function tickCards(){const now=Date.now(),td=today();document.querySelectorAll('.tm').forEach(el=>{const d=el.dataset.d,st=new Date(d+'T'+el.dataset.s+':00').getTime(),en=new Date(d+'T'+el.dataset.e+':00').getTime(),bar=el.closest('.tc').querySelector('.bar i');let h,p=0;
+if(el.dataset.x==='1'){h='<span>✓ Completed</span>';p=100}
+else if(now<st){h='<span>Starts in '+hms(Math.round((st-now)/1000))+'</span>'}
+else if(now<en){const el_=Math.round((now-st)/1000),left=Math.round((en-now)/1000);h='<span>▲ '+hms(el_)+' elapsed</span><span>▼ '+hms(left)+' left</span>';p=(now-st)/(en-st)*100}
+else{h='<span>Time ended</span>';p=100}
+if(el._h!==h){el.innerHTML=h;el._h=h}if(bar)bar.style.width=p+'%'})}
+setInterval(tickCards,1000);
+
+/* ---------- task reminders ---------- */
+function checkTasks(){if(!D.set.alerts)return;const n=new Date(),nm=n.getHours()*60+n.getMinutes(),d=today();tasksOn(d).forEach(t=>{if(!t.alarm||isDone(t,d))return;const s=mins(t.start),k=d+t.id;if(nm>=s&&nm-s<=2&&!D.fired[k]){D.fired[k]=1;save();chime();ring('Time for: '+t.name,t.desc||'Starts now · '+t12(t.start))}})}
+setInterval(checkTasks,15000);checkTasks();
+
+/* ---------- calendar export ---------- */
+function ics(){const E=s=>s.replace(/[\\;,]/g,'\\$&').replace(/\n/g,'\\n'),z=d=>d.getUTCFullYear()+pad(d.getUTCMonth()+1)+pad(d.getUTCDate())+'T'+pad(d.getUTCHours())+pad(d.getUTCMinutes())+pad(d.getUTCSeconds())+'Z';const ev=D.tasks.map(t=>{const day=(t.repeat?today():t.date).replace(/-/g,'');return ['BEGIN:VEVENT','UID:'+t.id+'@ap','DTSTAMP:'+z(new Date()),'DTSTART:'+day+'T'+t.start.replace(':','')+'00','DTEND:'+day+'T'+t.end.replace(':','')+'00',t.repeat?'RRULE:FREQ=DAILY':'','SUMMARY:'+E(t.name),'DESCRIPTION:'+E(t.desc||''),...(t.alarm?['BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:'+E(t.name),'TRIGGER:PT0M','END:VALARM']:[]),'END:VEVENT'].filter(Boolean).join('\r\n')});const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//AP//EN',...ev,'END:VCALENDAR'].join('\r\n')],{type:'text/calendar'}));a.download='discipline-alarms.ics';document.body.appendChild(a);a.click();a.remove();toast('Open the file to add alarms to your calendar')}
+
+/* ---------- PWA ---------- */
+addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferred=e;if(tab==='progress')render()});
+if('serviceWorker' in navigator&&location.protocol!=='file:')addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+['pointerdown','keydown'].forEach(v=>addEventListener(v,()=>{if(D.set.sound)audio()},{once:true,passive:true}));
+/* ---------- social-app block screen, deep links, away tracking ---------- */
+const appLink=()=>location.href.split(/[?#]/)[0].replace(/index\.html$/,'');
+function copyT(t,m){(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>toast(m)).catch(()=>{const x=document.createElement('textarea');x.value=t;document.body.appendChild(x);x.select();try{document.execCommand('copy');toast(m)}catch(e){prompt('Copy:',t)}x.remove()})}
+let bT;
+function showBlock(preview){if(!preview){D.blocks.push({d:today(),at:Date.now()});save()}$('#bM').textContent=D.msg||"Don't do that.";$('#block').classList.add('on');navigator.vibrate&&navigator.vibrate([200,100,200]);let n=10;const g=$('#bgo');g.disabled=true;g.textContent='Continue anyway ('+n+')';clearInterval(bT);bT=setInterval(()=>{n--;if(n<=0){clearInterval(bT);g.disabled=false;g.textContent='Continue anyway'}else g.textContent='Continue anyway ('+n+')'},1000)}
+function hideBlock(){clearInterval(bT);$('#block').classList.remove('on')}
+let leftAt=0;
+document.addEventListener('visibilitychange',()=>{if(document.hidden){if(R.run)leftAt=Date.now()}else if(leftAt){const x=Math.round((Date.now()-leftAt)/1000);leftAt=0;if(x>=5){const k=today(),a=D.away[k]||{n:0,s:0};a.n++;a.s+=x;D.away[k]=a;save();toast('You left for '+(x>=60?Math.floor(x/60)+'m '+x%60+'s':x+'s')+' during focus')}}});
+const GO=new URLSearchParams(location.search).get('go');
+if(['home','plan','habits','focus','progress'].includes(GO))tab=GO;
+render();
+if(GO==='stop')showBlock();else if(GO==='urge')urgeSheet();
+if(GO)try{history.replaceState(null,'',location.pathname)}catch(e){}
+</script>
+</body>
+</html>
